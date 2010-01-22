@@ -93,6 +93,29 @@ public class Matrix{
 		}
 		return ident;
 	}
+	public Matrix invert(){
+		if(get_width()==2 && get_height()==2){
+			return invert2X2();
+		}else{
+			System.out.println("Sorry only 2X2 matrices implemented so far");
+			System.exit(1);
+		}
+		
+		return null;
+	}
+	public Matrix invert2X2(){
+		double det = get_entry(1,1) * get_entry(2,2) - get_entry(2,1) * get_entry(1,2);
+		if(det == 0){
+			System.out.println("Matrix appears to be uninvertible!");
+			System.exit(1);
+		}
+		Matrix temp = new Matrix(2,2);
+		temp.set_entry(1,1,get_entry(2,2));
+		temp.set_entry(2,2,get_entry(1,1));
+		temp.set_entry(1,2,-get_entry(1,2));
+		temp.set_entry(2,1,-get_entry(2,1));
+		return temp.multiply(1/det);
+	}
 	public Matrix join_identity(){
 	//Returns the matrix with the Identity joined
 	//used for Jordan-Gauss mathod of finding inverse
