@@ -1,0 +1,4 @@
+Ben, I hope this would be useful.
+This is just a netbeans project with examples of how I would implement these menus.
+Let me know if you want some help, otherwise, well it's just an example, there are other ways of implementing this functionality.
+

@@ -1,6 +1,22 @@
 public class example{
 
 	public static void main(String args[]){
+		//Question 3b
+		/*
+		double a[][]={{-2,3},{-4,5}};
+		Matrix A = new Matrix(a);
+		Matrix A_I = A.invert();
+		A_I.print();
+
+		double b[][]={{5},{7}};
+		Matrix B = new Matrix(b);
+		System.out.println("X");
+		B.print();
+		System.out.println("=");
+		A_I.multiply(B).print();
+		*/
+
+		//question 3a
 		double a[][]={{3,7},{4,-1},{-5,2}};
 		double b[][]={{-5,-3},{10,6}};
 		double c[][]={{-2,3},{-4,5}};
@@ -8,8 +24,14 @@ public class example{
 		Matrix B = new Matrix(b);
 		Matrix C = new Matrix(c);
 
-
-		C.multiply(C.invert()).print();
+		//(i) 2A + 3B
+		//(iii) AC
+		A.multiply(C).print();
+		//C^-1
+		C.invert().print();
+		
+		//C.multiply(C.invert()).print();
+		
 		//double ic[][]={{2.5,-1.5},{2,-1}};
 		//Matrix IC = new Matrix(ic);
 		//Matrix CI = C.invert();
