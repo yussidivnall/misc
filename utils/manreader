@@ -1,0 +1,7 @@
+#!/bin/bash
+man $1 |cat > /tmp/man.temp
+while read r; do
+echo $r
+echo $r|espeak --punct="-=\"\\" -v m3 -w /tmp/mannline.wav
+play /tmp/mannline.wav echos 0.8 0.88 100 0.4 treble 1  2>/dev/null
+done </tmp/man.temp
